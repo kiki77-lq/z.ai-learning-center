@@ -130,7 +130,7 @@ const steps = [
   { icon: Trophy, num: '04', title: '获得认证', desc: '颁发电子证书与区块链存证，永久有效，随时核验，接入 340+ 企业人才库。' },
 ];
 
-const logos = ['华为云','阿里云','腾讯云','百度智能云','京东科技','字节跳动','美团','滴滴','快手','商汤科技'];
+const logos = [' '];
 
 // ─── CertStackCards (Hero visual) ───
 const certStack = [
@@ -139,7 +139,7 @@ const certStack = [
   { level: 'L3', name: 'AI 研究工程师', summary: '主导大模型训练与分布式架构', color: BLUE_DARK, border: '#93C5FD', tagBg: '#DBEAFE', tagColor: BLUE_DARK },
 ];
 
-function CertStackCards({ onEnroll }: { onEnroll: (level?: string) => void }) {
+function CertStackCards() {
   const [hovered, setHovered] = useState(false);
   return (
     <div className="relative animate-floating" style={{ width: 360, height: 440 }}
@@ -195,11 +195,11 @@ function CertStackCards({ onEnroll }: { onEnroll: (level?: string) => void }) {
           </div>
         </div>
         <div className="px-6 pb-6">
-          <button type="button" onClick={() => onEnroll()}
+          <a href="#scroll-stack"
             className="w-full h-11 rounded-2xl text-[13px] font-bold inline-flex items-center justify-center gap-2 transition-all duration-300 hover:opacity-90 text-white"
             style={{ background: BLUE, boxShadow: `0 4px 16px ${BLUE_GLOW}` }}>
             查看认证路径 <ArrowRight className="w-3.5 h-3.5" />
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -365,8 +365,8 @@ export default function Certification() {
                     style={{ color: BLUE, fontFamily: "'JetBrains Mono', monospace" }}>AI Certification System</p>
                   <div style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1.02, letterSpacing: '-0.035em', fontWeight: 900 }}>
                     <TextPressure text="成为经过" textColor="#111827" className="block mb-1" />
-                    <TextPressure text="认证的" textColor="#111827" className="inline" />
-                    <span className="inline" style={{ background: `linear-gradient(135deg, ${BLUE}, ${CYAN})`,
+                    <TextPressure text="认证的" textColor="#111827" className="block mb-1" />
+                    <span className="block" style={{ background: `linear-gradient(135deg, ${BLUE}, ${CYAN})`,
                       WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                       AI 工程师
                     </span>
@@ -379,12 +379,12 @@ export default function Certification() {
                 </motion.p>
 
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-                  <button type="button" onClick={() => openModal()}
+                  <a href="#scroll-stack"
                     className="inline-flex items-center gap-2.5 px-8 rounded-2xl text-[14px] font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:shadow-xl active:scale-[0.98]"
                     style={{ background: BLUE, boxShadow: `0 8px 30px ${BLUE_GLOW}`, height: 52 }}>
                     开始报名认证 <ArrowRight className="w-4 h-4" />
-                  </button>
-                  <a href="#scroll-stack"
+                  </a>
+                  <a href="#how-to-certify"
                     className="inline-flex items-center gap-2 px-7 rounded-2xl text-[14px] font-semibold transition-all duration-300 hover:bg-white/80 hover:shadow-sm text-slate-600"
                     style={{ border: '1px solid #E2E8F0', backgroundColor: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(8px)', height: 52 }}>
                     了解认证路径
@@ -395,7 +395,7 @@ export default function Certification() {
 
             <motion.div className="lg:col-span-5 hidden lg:flex items-center justify-center"
               initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.3 } }}>
-              <CertStackCards onEnroll={openModal} />
+              <CertStackCards />
             </motion.div>
           </div>
         </div>
@@ -486,7 +486,7 @@ export default function Certification() {
       </section>
 
       {/* ═══ § 4  HOW TO CERTIFY ═══ */}
-      <section className="pt-40 pb-32" style={{ backgroundColor: '#F8FAFC' }}>
+      <section id="how-to-certify" className="pt-40 pb-32" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-20 lg:gap-24 items-start">
 
