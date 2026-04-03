@@ -34,7 +34,7 @@ function TextPressure({ text, textColor = '#111827', className = '' }: TextPress
           const sr = span.getBoundingClientRect();
           const d = dist(mouseRef.current, { x: sr.x + sr.width/2, y: sr.y + sr.height/2 });
           span.style.fontWeight = String(Math.floor(getAttr(d, maxDist, 100, 900)));
-          span.style.letterSpacing = `${(Math.floor(getAttr(d, maxDist, 75, 125)) - 100) * 0.01}em`;
+          span.style.letterSpacing = `${(Math.floor(getAttr(d, maxDist, 95, 100)) - 100) * 0.01}em`;
         });
       }
       rafRef.current = requestAnimationFrame(animate);
@@ -139,8 +139,8 @@ const certStack = [
   { level: 'L3', name: 'AI 研究工程师', summary: '主导大模型训练与分布式架构', color: BLUE_DARK, border: '#93C5FD', tagBg: '#DBEAFE', tagColor: BLUE_DARK },
 ];
 
-function CertStackCards({ onEnroll }: { onEnroll: (level?: string) => void }) {
-  const [hovered, setHovered] = useState(false);
+function CertStackCards() {
+    const [hovered, setHovered] = useState(false);
   return (
     <div className="relative animate-floating" style={{ width: 360, height: 440 }}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
@@ -363,7 +363,7 @@ export default function Certification() {
                 <motion.div variants={fadeUp} className="mb-8">
                   <p className="text-[11px] font-bold uppercase tracking-[0.24em] mb-5"
                     style={{ color: BLUE, fontFamily: "'JetBrains Mono', monospace" }}>AI Certification System</p>
-                  <div style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1.02, letterSpacing: '0em', fontWeight: 900 }}>
+                  <div style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1.02, letterSpacing: '0.09em', fontWeight: 900 }}>
                     <TextPressure text="成为经过" textColor="#111827" className="block mb-1" />
                     <TextPressure text="认证的" textColor="#111827" className="block mb-1" />
                     <span className="block" style={{ background: `linear-gradient(135deg, ${BLUE}, ${CYAN})`,
@@ -395,7 +395,7 @@ export default function Certification() {
 
             <motion.div className="lg:col-span-5 hidden lg:flex items-center justify-center"
               initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.3 } }}>
-              <CertStackCards onEnroll={openModal} />
+              <CertStackCards />
             </motion.div>
           </div>
         </div>
