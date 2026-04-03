@@ -617,10 +617,10 @@ export default function Certification() {
 
             <div className="relative z-10 max-w-2xl mx-auto">
               <p className="text-[11px] font-bold uppercase tracking-[0.24em] mb-6 text-blue-300"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}>Start Today</p>
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}>Start Now</p>
               <h2 className="font-extrabold tracking-[-0.035em] leading-[1.05] mb-6 text-white"
                 style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}>
-                你的 AI 职业<br />从这一步开始
+                你的 AI 梦想<br />从这一步开始
               </h2>
               <p className="text-[15px] leading-[1.8] mb-12 text-blue-200/60">
                 报名即获专属备考资料与学习路径规划，资深导师一对一辅导，帮助你以最高效的方式通过认证。
