@@ -130,7 +130,7 @@ const steps = [
   { icon: Trophy, num: '04', title: '获得认证', desc: '颁发电子证书与区块链存证，永久有效，随时核验，接入 340+ 企业人才库。' },
 ];
 
-const logos = [' '];
+const logos = ['华为云','阿里云','腾讯云','百度智能云','京东科技','字节跳动','美团','滴滴','快手','商汤科技'];
 
 // ─── CertStackCards (Hero visual) ───
 const certStack = [
@@ -139,7 +139,7 @@ const certStack = [
   { level: 'L3', name: 'AI 研究工程师', summary: '主导大模型训练与分布式架构', color: BLUE_DARK, border: '#93C5FD', tagBg: '#DBEAFE', tagColor: BLUE_DARK },
 ];
 
-function CertStackCards() {
+function CertStackCards({ onEnroll }: { onEnroll: (level?: string) => void }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div className="relative animate-floating" style={{ width: 360, height: 440 }}
@@ -363,7 +363,7 @@ export default function Certification() {
                 <motion.div variants={fadeUp} className="mb-8">
                   <p className="text-[11px] font-bold uppercase tracking-[0.24em] mb-5"
                     style={{ color: BLUE, fontFamily: "'JetBrains Mono', monospace" }}>AI Certification System</p>
-                  <div style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1.02, letterSpacing: '-0.035em', fontWeight: 900 }}>
+                  <div style={{ fontSize: 'clamp(52px, 7vw, 80px)', lineHeight: 1.02, letterSpacing: '0em', fontWeight: 900 }}>
                     <TextPressure text="成为经过" textColor="#111827" className="block mb-1" />
                     <TextPressure text="认证的" textColor="#111827" className="block mb-1" />
                     <span className="block" style={{ background: `linear-gradient(135deg, ${BLUE}, ${CYAN})`,
@@ -395,7 +395,7 @@ export default function Certification() {
 
             <motion.div className="lg:col-span-5 hidden lg:flex items-center justify-center"
               initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0, transition: { duration: 0.8, delay: 0.3 } }}>
-              <CertStackCards />
+              <CertStackCards onEnroll={openModal} />
             </motion.div>
           </div>
         </div>
@@ -486,7 +486,7 @@ export default function Certification() {
       </section>
 
       {/* ═══ § 4  HOW TO CERTIFY ═══ */}
-      <section id="how-to-certify" className="pt-40 pb-32" style={{ backgroundColor: '#F8FAFC' }}>
+      <section className="pt-40 pb-32" style={{ backgroundColor: '#F8FAFC' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-20 lg:gap-24 items-start">
 
