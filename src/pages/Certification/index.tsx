@@ -106,6 +106,14 @@ const certLevels = [
     prerequisites: ['持有 L2 证书或同等能力', '研究项目实战经验'],
     accent: BLUE_DARK, accentBg: BLUE_BG, isPro: false,
   },
+  {
+    level: 'L4', num: '04', label: '专家认证', title: 'AI Research', titleZh: 'AI 研究工程师',
+    tagEn: 'EXPERT', duration: '12–16 Weeks', examFormat: 'Project Review + Defense',
+    audience: '高级工程师 / 研究员', careerTarget: 'AI 架构师 · 首席研究员',
+    skills: ['大模型微调训练', '分布式 AI 系统', '研究方法论', '技术创新领导力', '学术成果转化'],
+    prerequisites: ['持有 L2 证书或同等能力', '研究项目实战经验'],
+    accent: BLUE_DARK, accentBg: BLUE_BG, isPro: false,
+  },
 ];
 
 const values = [
